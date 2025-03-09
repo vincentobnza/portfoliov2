@@ -32,7 +32,7 @@ const PROJECTS = [
 export const Projects = () => {
   return (
     <section className="mt-10 w-full justify-start items-start flex flex-col gap-4">
-      <div className="w-full flex  items-start justify-between  mb-4">
+      <div className="w-full flex items-start justify-between mb-4">
         <div className="flex flex-col">
           <div className="flex gap-2">
             <SparklesText text="Featured" />
@@ -46,13 +46,15 @@ export const Projects = () => {
           </p>
         </div>
 
-        <Link
-          to="/projects"
-          className={buttonVariants({ variant: "link", size: "sm" })}
-        >
-          View More Projects
-          <ArrowUpRight size={16} />
-        </Link>
+        <div className="hidden md:flex">
+          <Link
+            to="/projects"
+            className={buttonVariants({ variant: "link", size: "sm" })}
+          >
+            View More Projects
+            <ArrowUpRight size={16} />
+          </Link>
+        </div>
       </div>
 
       <div className="mt-10 w-full flex flex-col gap-8">
@@ -61,7 +63,7 @@ export const Projects = () => {
             key={index}
             className="w-full flex gap-4  border-b border-zinc-200 dark:border-zinc-800 pb-10"
           >
-            <div className="flex flex-col w-3/4 ">
+            <div className="flex flex-col w-full md:w-3/4 ">
               <p className="text-xs text-zinc-600 dark:text-zinc-400 mb-2 font-semibold">
                 {project.date}
               </p>
@@ -70,14 +72,14 @@ export const Projects = () => {
                 {project.description}
               </p>
 
-              <div className="mt-10 w-full flex justify-between gap-4">
+              <div className="mt-10 w-full flex flex-col md:flex-row justify-between gap-4">
                 <div className="flex items-center gap-2">
                   {project.tools.map((tool, index) => (
                     <Chip key={index} label={tool} />
                   ))}
                 </div>
 
-                <div className="flex gap-1">
+                <div className="flex gap-1 mt-4 md:mt-0">
                   {project.repo_link && (
                     <Link
                       to="/projects"
@@ -112,7 +114,7 @@ export const Projects = () => {
                 </div>
               </div>
             </div>
-            <div className="w-1/3 h-30 border border-zinc-200 dark:border-zinc-800 relative">
+            <div className="hidden md:flex w-1/3 h-30 border border-zinc-200 dark:border-zinc-800 relative">
               <Glow blur="3xl" />
               <BlurFade key={project.image} delay={0.25 + index * 0.05} inView>
                 <img

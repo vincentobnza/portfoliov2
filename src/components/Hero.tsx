@@ -24,8 +24,8 @@ export const Hero = () => {
               Hello, I am Vincent.
             </TextAnimate>
           </p>
-          <motion.h1 className="text-5xl md:text-[100px] font-bold text-zinc-800 dark:text-zinc-200">
-            <AuroraText>ui/ux</AuroraText>{" "}
+          <motion.h1 className="text-7xl md:text-[100px] font-bold dark:bg-gradient-to-l dark:from-emerald-900/20 dark:via-green-400 dark:to-cyan-900 dark:bg-clip-text dark:text-transparent">
+            ui/ux {""}
             <span className="dark:bg-gradient-to-l dark:from-zinc-100 dark:to-zinc-700 dark:bg-clip-text dark:text-transparent">
               designer
             </span>

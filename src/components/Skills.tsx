@@ -123,7 +123,7 @@ const Cards = ({ theme }: CardsProps) => {
             key={tech.id}
             className={`p-4 flex items-start justify-start gap-5 border border-zinc-200 dark:border-zinc-800 rounded-md cursor-${tech.cursor} overflow-hidden relative`}
           >
-            <tech.icon size={16} className="m-1" />
+            <tech.icon size={16} className="m-1 hidden md:flex " />
             <div className="flex flex-col">
               <h3 className="text-sm mb-2 font-semibold">{tech.tech}</h3>
               <p className="text-xs text-zinc-600 dark:text-zinc-500">
