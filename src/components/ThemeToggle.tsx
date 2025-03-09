@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
 import { useTheme } from "./ThemeProvider";
-import { MoonStar, Sun } from "lucide-react";
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
   const isDark = theme === "dark";
