@@ -3,7 +3,6 @@ import { TextAnimate } from "./magicui/text-animate";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowDown } from "lucide-react";
 import { Pointer } from "./magicui/pointer";
-import { AuroraText } from "./magicui/aurora-text";
 import { TextOutline } from "./ui/textoutline";
 import { useEffect, useState } from "react";
 
@@ -11,7 +10,7 @@ export const Hero = () => {
   return (
     <section>
       <Container>
-        <TextOutline />
+        <TextOutline>VINCENT UI/UX</TextOutline>
         <Pointer className="fill-indigo-500" />
         <div className="flex flex-col gap-4 text-center justify-center items-center ">
           <p className="text-sm font-semibold text-zinc-800 dark:text-zinc-300">
@@ -19,14 +18,19 @@ export const Hero = () => {
               animation="blurInUp"
               by="character"
               once
-              className=" text-lg font-bold text-zinc-600 dark:text-zinc-500 uppercase"
+              className=" text-lg font-bold text-zinc-600 dark:text-zinc-500"
             >
               Hello, I am Vincent.
             </TextAnimate>
           </p>
-          <motion.h1 className="text-7xl md:text-[100px] font-bold dark:bg-gradient-to-l dark:from-emerald-900/20 dark:via-green-400 dark:to-cyan-900 dark:bg-clip-text dark:text-transparent">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-7xl md:text-[100px] font-bold text-zinc-800 dark:bg-gradient-to-l dark:from-emerald-900/20 dark:via-green-400 dark:to-cyan-900 dark:bg-clip-text dark:text-transparent"
+          >
             ui/ux {""}
-            <span className="dark:bg-gradient-to-l dark:from-zinc-100 dark:to-zinc-700 dark:bg-clip-text dark:text-transparent">
+            <span className="dark:bg-gradient-to-r dark:from-zinc-800 dark:via-zinc-300 dark:to-zinc-700 dark:bg-clip-text dark:text-transparent">
               designer
             </span>
             <span className="animate-pulse">.</span>

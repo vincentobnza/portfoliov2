@@ -6,6 +6,7 @@ import ProjectImage from "../assets/project.png";
 import { Glow } from "./ui/glow";
 import { BlurFade } from "./magicui/blur-fade";
 import Chip from "./ui/chip";
+import Arrow from "../assets/arrow.png";
 
 const PROJECTS = [
   {
@@ -33,10 +34,17 @@ export const Projects = () => {
   return (
     <section className="mt-10 w-full justify-start items-start flex flex-col gap-4">
       <div className="w-full flex items-start justify-between mb-4">
-        <div className="flex flex-col">
+        <div className="flex flex-col relative">
+          {/* ARROW IMAGE */}
+
+          <img
+            src={Arrow}
+            alt="arrow"
+            className="absolute size-20 -bottom-8 -right-20"
+          />
           <div className="flex gap-2">
             <SparklesText text="Featured" />
-            <h1 className="text-4xl font-extrabold dark:bg-gradient-to-br dark:from-green-800 via-emerald-300 dark:to-emerald-900 dark:bg-clip-text dark:text-transparent">
+            <h1 className="text-zinc-800 text-4xl font-extrabold dark:bg-gradient-to-br dark:from-green-800 via-emerald-300 dark:to-emerald-900 dark:bg-clip-text dark:text-transparent">
               Projects
             </h1>
           </div>
@@ -61,9 +69,9 @@ export const Projects = () => {
         {PROJECTS.map((project, index) => (
           <div
             key={index}
-            className="w-full flex gap-4  border-b border-zinc-200 dark:border-zinc-800 pb-10"
+            className="w-full flex flex-col md:flex-row gap-8 border-b border-zinc-200 dark:border-zinc-800 pb-10"
           >
-            <div className="flex flex-col w-full md:w-3/4 ">
+            <div className="flex flex-col w-full md:w-3/4">
               <p className="text-xs text-zinc-600 dark:text-zinc-400 mb-2 font-semibold">
                 {project.date}
               </p>
@@ -82,7 +90,7 @@ export const Projects = () => {
                 <div className="flex gap-1 mt-4 md:mt-0">
                   {project.repo_link && (
                     <Link
-                      to="/projects"
+                      to={project.repo_link}
                       className={buttonVariants({
                         variant: "link",
                         size: "sm",
@@ -98,7 +106,7 @@ export const Projects = () => {
 
                   {project.link && (
                     <Link
-                      to="/projects"
+                      to={project.link}
                       className={buttonVariants({
                         variant: "link",
                         size: "sm",
@@ -114,13 +122,13 @@ export const Projects = () => {
                 </div>
               </div>
             </div>
-            <div className="hidden md:flex w-1/3 h-30 border border-zinc-200 dark:border-zinc-800 relative">
+            <div className="flex justify-center items-center w-full md:w-1/4 relative">
               <Glow blur="3xl" />
               <BlurFade key={project.image} delay={0.25 + index * 0.05} inView>
                 <img
                   src={project.image}
                   alt="Project"
-                  className="w-full h-full"
+                  className="border border-zinc-200 dark:border-zinc-800 relative"
                 />
               </BlurFade>
             </div>

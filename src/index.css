@@ -163,7 +163,7 @@
 @layer utilities {
   .stroke-text {
     -webkit-text-stroke: 2px rgba(161, 161, 161, 0.096); /* Soft stroke */
-    text-stroke: 2px rgba(150, 150, 150, 0.233);
+    text-stroke: 2px rgba(5, 2, 2, 0.233);
     background: repeating-linear-gradient(
       -45deg,
       rgba(255, 255, 255, 0.1) 0px,
