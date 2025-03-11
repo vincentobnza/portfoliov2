@@ -56,19 +56,19 @@ export const Skills = () => {
     {
       id: 7,
       tech: "TailwindCSS",
-      yoe: "1 years of experience",
+      yoe: "3 years of experience",
       icon: RiTailwindCssFill,
     },
     {
       id: 8,
       tech: "Supabase",
-      yoe: "1 years of experience",
+      yoe: "1 year of experience",
       icon: RiSupabaseFill,
     },
     {
       id: 9,
       tech: "Next.js",
-      yoe: "1 years of experience",
+      yoe: "1 year of experience",
       icon: RiNextjsFill,
     },
     {
@@ -122,7 +122,7 @@ interface CardsProps {
 
 const Cards = ({ theme, TECH_STACK }: CardsProps) => {
   return (
-    <div className="sticky top-4 z-10 w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3">
+    <div className="sticky top-4 z-10 w-full grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
       {TECH_STACK.map((tech) => {
         const Icon = tech.icon;
         return (
@@ -139,16 +139,16 @@ const Cards = ({ theme, TECH_STACK }: CardsProps) => {
               }}
               onClick={tech.action}
               key={tech.id}
-              className={`p-4 flex items-start justify-start gap-5 border border-zinc-200 dark:border-zinc-800 rounded-md cursor-${tech.cursor} overflow-hidden relative`}
+              className={`p-5 flex items-start justify-start gap-5 border border-zinc-200 dark:border-zinc-800 rounded-md cursor-${tech.cursor} overflow-hidden relative`}
             >
               <div className="m-1">
-                <Icon size={16} />
+                <Icon size={20} />
               </div>
               <div className="flex flex-col">
-                <h3 className="text-sm mb-2 font-semibold">{tech.tech}</h3>
-                <p className="text-xs text-zinc-600 dark:text-zinc-500">
+                <h3 className="text-md mb-2 font-semibold">{tech.tech}</h3>
+                {/* <p className="text-sm text-zinc-600 dark:text-zinc-500">
                   {tech.yoe}
-                </p>
+                </p> */}
               </div>
             </motion.div>
           </MagicCard>

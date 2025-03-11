@@ -2,11 +2,11 @@ import { SparklesText } from "./magicui/sparkles-text";
 import { buttonVariants } from "./ui/button";
 import { Link } from "react-router-dom";
 import { Github, ArrowUpRight } from "lucide-react";
-import ProjectImage from "../assets/project.png";
 import { Glow } from "./ui/glow";
 import { BlurFade } from "./magicui/blur-fade";
 import Chip from "./ui/chip";
 import Arrow from "../assets/arrow.png";
+import { LinkPreview } from "./LinkPreview";
 
 const PROJECTS = [
   {
@@ -14,17 +14,16 @@ const PROJECTS = [
     date: "October 20, 2024",
     description:
       "A platform for developers to learn the fundamentals of JavaScript.",
-    image: ProjectImage,
+    image: "https://codescript.vercel.app/",
     tools: ["React", "Supabase", "Tailwind CSS"],
     link: "/projects/codecript",
     repo_link: "/",
   },
   {
-    name: "Booky - A Book Recommendation Platform",
-    date: "January 25, 2025",
-    description:
-      "A platform for book lovers to discover new books and share their favorites.",
-    image: ProjectImage,
+    name: "VinceOnCode",
+    date: "October 19, 2022",
+    description: "A site recommedation for building a website",
+    image: "https://shopify-landing-page-eight.vercel.app/",
     tools: ["React", "Tailwind CSS"],
     repo_link: "/",
   },
@@ -69,13 +68,15 @@ export const Projects = () => {
         {PROJECTS.map((project, index) => (
           <div
             key={index}
-            className="w-full flex flex-col md:flex-row gap-8 border-b border-zinc-200 dark:border-zinc-800 pb-10"
+            className="w-full flex flex-col md:flex-row gap-8 md:gap-16 border-b border-zinc-200 dark:border-zinc-800 pb-10"
           >
             <div className="flex flex-col w-full md:w-3/4">
               <p className="text-xs text-zinc-600 dark:text-zinc-400 mb-2 font-semibold">
                 {project.date}
               </p>
-              <h1 className="text-xl font-bold mb-3">{project.name}</h1>
+              <h1 className="text-2xl font-bold mb-3 text-zinc-800 dark:bg-gradient-to-l dark:from-zinc-800  dark:to-zinc-200 dark:bg-clip-text dark:text-transparent">
+                {project.name}
+              </h1>
               <p className="text-sm text-zinc-600 dark:text-zinc-500">
                 {project.description}
               </p>
@@ -122,14 +123,10 @@ export const Projects = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-center items-center w-full md:w-1/4 relative">
+            <div className="flex justify-center items-start w-full md:w-1/4 relative">
               <Glow blur="3xl" />
               <BlurFade key={project.image} delay={0.25 + index * 0.05} inView>
-                <img
-                  src={project.image}
-                  alt="Project"
-                  className="border border-zinc-200 dark:border-zinc-800 relative"
-                />
+                <LinkPreview url={project.image} width={400} height={250} />
               </BlurFade>
             </div>
           </div>

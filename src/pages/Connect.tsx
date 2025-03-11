@@ -1,9 +1,14 @@
 import { ArrowUpRight } from "lucide-react";
-import { Github, FileUser, Instagram, Twitter } from "lucide-react";
 import { motion } from "motion/react";
 import { BoxReveal } from "../components/magicui/box-reveal";
 import { useTheme } from "../components/ThemeProvider";
 import { Banner } from "../components/Banner";
+import {
+  SocialInstagramOutline,
+  Github,
+  TwitterXLine,
+  Documents,
+} from "../assets/icons/Icons";
 
 const ConnectWithMe = () => {
   return (
@@ -24,7 +29,7 @@ const List = [
     link: "/",
     description:
       "A detailed overview of my skills, experience, and achievements in UI/UX design.",
-    icon: FileUser,
+    icon: Documents,
     button: [
       {
         name: "Download",
@@ -52,14 +57,14 @@ const List = [
     ],
   },
   {
-    name: "Twitter",
+    name: "X",
     link: "/",
     description:
       "Follow me for insights on design trends, tech discussions, and industry updates.",
-    icon: Twitter,
+    icon: TwitterXLine,
     button: [
       {
-        name: "Follow on Twitter",
+        name: "Follow on X",
         link: "/",
       },
     ],
@@ -69,7 +74,7 @@ const List = [
     link: "/",
     description:
       "A visual showcase of my creative work, design inspirations, and behind-the-scenes projects.",
-    icon: Instagram,
+    icon: SocialInstagramOutline,
     button: [
       {
         name: "Follow on Instagram",
@@ -94,16 +99,7 @@ const SocialMedia = () => {
           {/* ICON TO RIGHT */}
 
           <div className="flex justify-start items-start gap-6">
-            <BoxReveal
-              boxColor={theme === "dark" ? "#1b1b1b" : "#e9ebec"}
-              duration={0.5}
-            >
-              <item.icon
-                className="absolute right-0 -bottom-8 text-zinc-200 dark:text-zinc-800 group-hover:dark:text-zinc-400 duration-300 transition-all opacity-40 group-hover:animate-pulse"
-                size={120}
-                strokeWidth={1}
-              />
-            </BoxReveal>
+            <item.icon className="absolute right-0 -bottom-8 text-zinc-200 dark:text-zinc-800 group-hover:dark:text-zinc-400 duration-300 transition-all opacity-40 group-hover:animate-pulse size-32 grayscale group-hover:grayscale-0" />
             <ArrowUpRight className="hidden md:flex m-1 text-zinc-500 dark:text-zinc-600" />
             <BoxReveal
               boxColor={theme === "dark" ? "#1b1b1b" : "#e9ebec"}
