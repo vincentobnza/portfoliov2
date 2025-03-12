@@ -3,6 +3,9 @@ import { Skills } from "../components/Skills";
 import { Projects } from "../components/Projects";
 
 export const Layout = () => {
+
+
+
   return (
     <div className="mt-12 w-full max-w-screen-lg mx-auto flex space-x-6">
       {/* Main Content */}
